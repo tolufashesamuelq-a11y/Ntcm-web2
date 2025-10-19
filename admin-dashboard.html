@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard - NTCM Int.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+  // Check if admin is logged in
+  if(sessionStorage.getItem('isAdminLoggedIn') !== 'true'){
+    window.location.href = "admin-login.html";
+  }
+</script>
+
+<header>
+  <div class="container nav-inner">
+    <div class="brand">
+      <div class="logo"><img src="ntcm logo.jpg" alt="Church Logo" style="width:48px;height:48px;"></div>
+      <div>
+        <div class="brand-name">NTCM Int. Admin</div>
+        <div class="brand-tag">Dashboard</div>
+      </div>
+    </div>
+    <nav>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </nav>
+  </div>
+</header>
+
+<main class="section container">
+  <h2>Registrations Overview</h2>
+  <div class="card" style="overflow-x:auto;">
+    <table id="registrationsTable">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Church</th>
+          <th>Branch</th>
+          <th>Event</th>
+          <th>Day</th>
+          <th>Accommodation</th>
+          <th>Origin</th>
+          <th>Position</th>
+          <th>Marital Status</th>
+          <th>Gender</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</main>
+<h2 style="margin-top:2rem;">Upload Resources</h2>
+<div class="card">
+  <form id="uploadForm">
+    <div style="margin-bottom:1rem;">
+      <label for="uploadType">Select Type</label>
+      <select id="uploadType" required>
+        <option value="">Choose type</option>
+        <option value="flyer">Program Flyer</option>
+        <option value="audio">Audio Message</option>
+        <option value="document">Document / Google Drive Link</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:1rem;">
+      <label for="fileInput">Upload File / Enter URL (for Google Drive)</label>
+      <input type="file" id="fileInput">
+      <input type="url" id="fileURL" placeholder="https://drive.google.com/drive/folders/1TR81VoaW8Tlm1tsTuwKE6OsEKceNNN2r">
+    </div>
+
+    <button type="submit" class="btn">Upload</button>
+    <div id="uploadMessage" style="margin-top:0.5rem;color:green;"></div>
+  </form>
+</div>
+
+<h3>Uploaded Resources</h3>
+<div class="card" id="uploadedResources">
+  <p>No resources uploaded yet.</p>
+</div>
+
+    <button type="submit" class="btn">Upload</button>
+    <div id="uploadMessage" style="margin-top:0.5rem;color:green;"></div>
+  </form>
+</div>
+
+<h3>Uploaded Resources</h3>
+<div class="card" id="uploadedResources">
+  <p>No resources uploaded yet.</p>
+</div>
+ <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>

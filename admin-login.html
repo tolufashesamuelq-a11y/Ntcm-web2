@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Login - NTCM Int.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="section container" style="max-width:400px; margin:auto; margin-top:5rem;">
+  <div class="card">
+    <h2>Admin Login</h2>
+    <form id="adminLoginForm">
+      <div style="margin-bottom:1rem;">
+        <label for="username">Username</label>
+        <input type="text" id="username" required>
+      </div>
+      <div style="margin-bottom:1rem;">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div id="loginMessage" style="margin-top:0.5rem;color:red;"></div>
+    </form>
+  </div>
+</main>
+
+<script src="admin-login.js"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+/* ---------- Reset & Utilities ---------- */
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px; color: #e6bd08; background-image: url(consart\ hznd.jpg);
+}
+.container { max-width: 1100px; margin:0 auto; padding:0 1rem; }
+.small { font-size:.9rem; }
+.muted { color:#6b7280; }
+
+/* ---------- Header ---------- */
+header { background: linear-gradient(90deg,#0f172a,#0b2a50); color:white; position:sticky; top:0; z-index:100; }
+.nav-inner { display:flex; align-items:center; justify-content:space-between; padding:.6rem 0; }
+.brand { display:flex; gap:.6rem; align-items:center; }
+.logo img { width:48px; height:48px; border-radius:8px; }
+.brand-name { font-weight:700; }
+.brand-tag { font-size:.85rem; opacity:.9; }
+nav ul { display:flex; gap:.6rem; align-items:center; list-style:none; }
+.btn {
+  background:#ef7b3a; color:white; padding:.5rem .85rem; border-radius:8px;
+  border:0; cursor:pointer; font-weight:600; text-decoration:none;
+}
+.ghost {
+  background:transparent; border:1px solid rgba(255,255,255,.12);
+  padding:.45rem .75rem; border-radius:8px; color:white; text-decoration:none;
+}
+.nav-toggle { display:none; background:transparent; border:0; color:white; font-size:22px; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.6)),
+              url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600') center/cover no-repeat;
+  color:white; padding:4rem 0 3rem;
+}
+.hero-grid { display:grid; grid-template-columns:1fr 360px; gap:2rem; align-items:start; }
+.lead { opacity:.95; margin-bottom:1rem; }
+
+/* Fancy text effect */
+.fancy {
+  font-size:2rem; line-height:1.05;
+  background: linear-gradient(90deg,#fff,#ffd6a5);
+  -webkit-background-clip:text; color:transparent;
+  animation: floatText 5s ease-in-out infinite;
+}
+@keyframes floatText { 0%{transform:translateY(0);}50%{transform:translateY(4px);}100%{transform:translateY(0);} }
+
+/* ---------- Cards & Sidebar ---------- */
+.card {
+  background:white; border-radius:12px; padding:1rem;
+  box-shadow:0 8px 30px rgba(2,6,23,.06); color:#111;
+}
+.pastor-card .pastor-avatar {
+  width:56px; height:56px; border-radius:10px;
+  background:linear-gradient(180deg,#fff,#f3f3f3);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; color:#05203a; font-size:1.2rem;
+}
+.pastor-info { display:flex; gap:.6rem; align-items:center; }
+.pastor-actions { display:flex; flex-direction:column; gap:.5rem; margin-top:.6rem; }
+
+/* ---------- Grid / Sections ---------- */
+.section { padding:3rem 0; }
+.section-header { display:flex; flex-direction:column; margin-bottom:1rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+
+/* ---------- Video Cards ---------- */
+.video-card {
+  cursor:pointer; transition:transform 0.2s ease-in-out;
+}
+.video-card:hover { transform:translateY(-3px); }
+.video-info .title { font-weight:600; font-size:.95rem; margin-top:.3rem; }
+
+/* ---------- Flyer Carousel ---------- */
+.flyer-carousel-wrapper { position:relative; overflow:hidden; }
+.flyer-carousel { display:flex; transition:0.5s ease-in-out; }
+.flyer-carousel img { min-height: 100vh; flex-shrink:0; border-radius:8px; }
+
+
+/* ---------- Google Drive Links ---------- */
+#driveFiles a.btn {
+  display:inline-block; margin-right:.5rem; margin-bottom:.5rem;
+}
+
+/* ---------- Forms ---------- */
+input, select, textarea { padding:.6rem; border-radius:8px; border:1px solid #e5e7eb; width:100%; }
+.form-actions { display:flex; gap:.5rem; }
+
+/* ---------- Footer ---------- */
+footer { background:#031226; color:#cbd5e1; padding:2rem 0; margin-top:2rem; }
+.footer-grid { display:grid; grid-template-columns:1fr 200px; gap:1rem; }
+
+/* ---------- Modal ---------- */
+.overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,.6);
+  display:flex; align-items:center; justify-content:center;
+  z-index:200; opacity:0; pointer-events:none; transition:opacity .18s;
+}
+.overlay.open { opacity:1; pointer-events:auto; }
+.modal {
+  background:white; border-radius:12px;
+  max-width:900px; width:95%; max-height:90vh; overflow:auto; position:relative;
+}
+.close { position:absolute; right:14px; top:10px; background:transparent; border:0; font-size:20px; cursor:pointer; color:#111; }
+
+/* ---------- Responsive ---------- */
+@media (max-width:880px){
+  .hero-grid { grid-template-columns:1fr; }
+  nav ul { display:none; }
+  .nav-toggle { display:inline-block; }
+  table { font-size:.85rem; }
+}
+.pastor-card .pastor-avatar {
+  width:80px; height:80px; border-radius:50%;
+  object-fit:cover; /* ensures image covers avatar nicely */
+  background:#f3f3f3; display:flex; align-items:center; justify-content:center;
+}
+/* ---------- Registration Form ---------- */
+.reg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.reg-grid label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.reg-grid input,
+.reg-grid select,
+.reg-grid textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #ef7b3a;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #d66b2f;
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  color: #111;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ghost:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(2,6,23,.06);
+  color: #111;
+  margin-top: 1rem;
+}
+
+/* Heading inside card */
+.card h2 {
+  margin-bottom: 1rem;
+}
+
+/* Message after submit */
+#formMessage {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 880px) {
+  .reg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+}
+/* ---------- Flyer Carousel ---------- */
+.flyer-carousel-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.flyer-carousel {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.flyer-carousel img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.button-center {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #ef7b3a;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #d66b2f;
+}
+
+
+
+/* ---------- Registration Form ---------- */
+.reg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.reg-grid label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.reg-grid input,
+.reg-grid select,
+.reg-grid textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(2,6,23,.06);
+  color: #111;
+  margin-top: 1rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.btn {
+  background: #ef7b3a;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #d66b2f;
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  color: #111;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ghost:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+#formMessage {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  color: green;
+}
+
+/* ---------- Back to Home Button ---------- */
+a.btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 880px) {
+  .reg-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .flyer-carousel-wrapper {
+    max-height: 300px;
+  }
+}

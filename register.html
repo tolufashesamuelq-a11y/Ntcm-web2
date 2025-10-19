@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register - NTCM Int.</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo"><img src="ntcm logo.jpg" alt="Church Logo" style="width:48px;height:48px;"></div>
+        <div>
+          <div class="brand-name">New Testament Christian Mission Int.</div>
+          <div class="brand-tag">Minna • Online & Local Community</div>
+        </div>
+      </div>
+      <nav>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false">☰</button>
+        <ul id="navList">
+          <li><a href="index.html" class="muted small">Home</a></li>
+          <li><a href="#videos" class="muted small">Latest Videos</a></li>
+          <li><a href="#events" class="muted small">Events</a></li>
+          <li><a href="register.html" class="muted small">Register</a></li>
+          <li><button class="ghost" id="giveBtn">Give</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Back to Home Button -->
+  <div class="container" style="margin-top:1rem;">
+    <a href="index.html" class="btn">← Back to Home</a>
+  </div>
+
+  <!-- Program Flyer -->
+  <section class="section container" style="margin-top:1rem;">
+    <h2>Upcoming Program Flyer</h2>
+    <div class="flyer-carousel-wrapper card" style="padding:1rem;">
+      <div class="flyer-carousel" id="flyerCarousel">
+        <img src="test falyer3.jpg" alt="Program Flyer 1">
+        <img src="test flayer.jpg" alt="Program Flyer 2">
+        <img src="test flye 2.jpg" alt="Program Flyer 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form -->
+  <main class="section container">
+    <h2>Event / Membership Registration</h2>
+    <div class="card">
+      <form id="registrationForm">
+        <div class="reg-grid">
+          <div>
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div>
+            <label for="churchName">Church / Fellowship Name</label>
+            <input type="text" id="churchName" name="churchName" required>
+          </div>
+
+          <div>
+            <label for="branch">Church Branch</label>
+            <select id="branch" name="branch" required>
+              <option value="">Select Branch</option>
+              <option value="Minna">Main Branch - Minna</option>
+              <option value="Lagos">Branch 1 - Lagos</option>
+              <option value="Abuja">Branch 2 - Abuja</option>
+              <option value="Kaduna">Branch 3 - Kaduna</option>
+              <option value="Port Harcourt">Branch 4 - Port Harcourt</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="eventType">Event / Program</label>
+            <select id="eventType" name="eventType" required>
+              <option value="">Select Event</option>
+              <option value="3DayProgram">3-Day Program</option>
+              <option value="SundayService">Sunday Service</option>
+              <option value="MidweekPrayer">Midweek Prayer</option>
+              <option value="YouthFellowship">Youth Fellowship</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="attendanceDay">Which day will you attend?</label>
+            <select id="attendanceDay" name="attendanceDay" required>
+              <option value="">Select Day</option>
+              <option value="Day1">Day 1</option>
+              <option value="Day2">Day 2</option>
+              <option value="Day3">Day 3</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="accommodation">Do you need accommodation?</label>
+            <select id="accommodation" name="accommodation" required>
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="origin">Where are you coming from?</label>
+            <input type="text" id="origin" name="origin" required>
+          </div>
+
+          <div>
+            <label for="position">Position in Church / Ministry</label>
+            <input type="text" id="position" name="position">
+          </div>
+
+          <div>
+            <label for="maritalStatus">Marital Status</label>
+            <select id="maritalStatus" name="maritalStatus">
+              <option value="">Select</option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Widowed">Widowed</option>
+              <option value="Divorced">Divorced</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions" style="margin-top:1rem;">
+          <button type="submit" class="btn">Submit Registration</button>
+          <button type="reset" class="ghost">Reset</button>
+        </div>
+      </form>
+      <div id="formMessage" style="margin-top:1rem; color:green;"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>New Testament Christian Mission Int. Minna</h3>
+        <p class="muted small">Contact: +234-800-000-0000 • Email: ntcm.int@example.com</p>
+        <div class="muted small">© <span id="year"></span> NTCM Int • All rights reserved</div>
+      </div>
+      <div class="footer-links">
+        <a href="admin-login.html" class="small">Admin</a>
+        <a href="index.html" class="small">Home</a>
+        <a href="#" class="small">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Footer Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Handle registration form
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        churchName: document.getElementById('churchName').value,
+        branch: document.getElementById('branch').value,
+        eventType: document.getElementById('eventType').value,
+        attendanceDay: document.getElementById('attendanceDay').value,
+        accommodation: document.getElementById('accommodation').value,
+        origin: document.getElementById('origin').value,
+        position: document.getElementById('position').value,
+        maritalStatus: document.getElementById('maritalStatus').value,
+        gender: document.getElementById('gender').value,
+        notes: document.getElementById('notes').value
+      };
+      console.log(data);
+      document.getElementById('formMessage').textContent = "Thank you! Your registration has been received.";
+      this.reset();
+    });
+
+    // Flyer Carousel Auto Slide
+    const flyerCarousel = document.getElementById('flyerCarousel');
+    let flyerIndex = 0;
+    setInterval(() => {
+      flyerIndex = (flyerIndex + 1) % flyerCarousel.children.length;
+      flyerCarousel.style.transform = `translateX(-${flyerIndex * 100}%)`;
+    }, 4000);
+  </script>
+</body>
+</html>
